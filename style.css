@@ -1,0 +1,50 @@
+
+body {
+    background-color: #e6f2ff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.minkyu {
+    position: absolute;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.minkyu.show {
+    bottom: 100px;
+    opacity: 1;
+    animation: wave 2s ease-in-out infinite alternate;
+}
+@keyframes wave {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(5deg); }
+}
+.speech-bubble {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 15px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+}
+.speech-bubble.show {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
